@@ -16,6 +16,7 @@
 package com.example.androidtask.repository
 
 import androidx.annotation.WorkerThread
+import com.example.androidtask.data.ApiService
 import com.example.androidtask.pojo.PostItem
 import com.example.androidtask.room.PostDao
 import kotlinx.coroutines.flow.Flow
@@ -24,7 +25,7 @@ import kotlinx.coroutines.flow.Flow
  * Abstracted Repository as promoted by the Architecture Guide.
  * https://developer.android.com/topic/libraries/architecture/guide.html
  */
-class PostRepository(private val postDao: PostDao) {
+class PostRepository(private val postDao: PostDao, private val apiService: ApiService) {
 
     // Room executes all queries on a separate thread.
     // Observed Flow will notify the observer when the data has changed.
@@ -39,4 +40,6 @@ class PostRepository(private val postDao: PostDao) {
     suspend fun insert(postItem: PostItem) {
         postDao.insertPost(postItem)
     }
+
+    suspend fun allPostFromApi() : List<PostItem> = apiService.getDataList()
 }

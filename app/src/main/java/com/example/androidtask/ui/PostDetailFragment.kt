@@ -10,6 +10,8 @@ import androidx.databinding.DataBindingUtil
 import com.example.androidtask.R
 import com.example.androidtask.databinding.FragmentPostDetailBinding
 import com.example.androidtask.pojo.PostItem
+import com.example.androidtask.utils.getDataObjectExtra
+import com.example.androidtask.utils.putDataObject
 
 
 class PostDetailFragment : Fragment() {

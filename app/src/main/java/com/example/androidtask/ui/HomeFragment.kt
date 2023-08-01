@@ -19,6 +19,7 @@ import com.example.androidtask.R
 import com.example.androidtask.PostViewModelFactory
 import com.example.androidtask.adapter.PostListAdapter
 import com.example.androidtask.databinding.FragmentHomeBinding
+import com.example.androidtask.utils.replaceFragment
 import com.google.gson.Gson
 
 
@@ -76,23 +77,3 @@ class HomeFragment : Fragment() {
 }
 
 
-fun FragmentActivity.replaceFragment(
-    container: Int,
-    fragment: Fragment,
-    addToBackStack: Boolean = false
-) {
-    supportFragmentManager.beginTransaction()
-        .replace(container, fragment, fragment.javaClass.simpleName)
-        .apply {
-            if (addToBackStack) addToBackStack(fragment.javaClass.simpleName)
-        }
-        .commit()
-}
-
-fun <T> Bundle.putDataObject(key: String, t: T) {
-    putString(key, Gson().toJson(t))
-}
-
-fun <T> Bundle.getDataObjectExtra(key: String, type: Class<T>): T {
-    return Gson().fromJson(getString(key), type)
-}

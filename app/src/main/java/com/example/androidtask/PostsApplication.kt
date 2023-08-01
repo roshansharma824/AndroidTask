@@ -17,6 +17,7 @@
 package com.example.androidtask
 
 import android.app.Application
+import com.example.androidtask.data.RetrofitBuilder
 import com.example.androidtask.repository.PostRepository
 import com.example.androidtask.room.PostRoomDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -29,5 +30,5 @@ class PostsApplication : Application() {
     // Using by lazy so the database and the repository are only created when they're needed
     // rather than when the application starts
     val database by lazy { PostRoomDatabase.getDatabase(this, applicationScope) }
-    val repository by lazy { PostRepository( database.postDao()) }
+    val repository by lazy { PostRepository( database.postDao(), RetrofitBuilder.apiService) }
 }
