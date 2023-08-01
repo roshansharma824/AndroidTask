@@ -33,8 +33,6 @@ class PostDetailFragment : Fragment() {
 
         val data  = arguments?.getDataObjectExtra(DATA, PostItem::class.java)
 
-        Log.d("PostDetailFragment","${data?.title}")
-
 
         binding.title.text = "${data?.id}   ${data?.title}"
         binding.body.text = data?.body

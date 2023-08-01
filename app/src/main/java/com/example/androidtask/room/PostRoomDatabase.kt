@@ -78,7 +78,6 @@ abstract class PostRoomDatabase : RoomDatabase() {
                 // comment out the following line.
                 INSTANCE?.let { database ->
                     scope.launch(Dispatchers.IO) {
-                        Log.d("WordRoomDatabase","onCreate")
                         populatePostDatabase(database.postDao())
                     }
                 }
@@ -89,14 +88,11 @@ abstract class PostRoomDatabase : RoomDatabase() {
 
             postDao.deleteAll()
 
-            Log.d("WordRoomDatabase","populatePostDatabase")
-
             val postItem = withContext(Dispatchers.IO){
                 RetrofitBuilder.apiService.getDataList()
             }
 
             postItem.forEach { it ->
-                Log.d("WordRoomDatabase","populatePostDatabase")
                 postDao.insertPost(it)
             }
 

@@ -47,7 +47,6 @@ class PostListAdapter : ListAdapter<PostItem, PostListAdapter.PostViewHolder>(PO
         holder.bind("${current.id} ${current.title}")
 
         holder.postItemView.setOnClickListener {
-            Log.d("PostListAdapter","onItemClickListener")
             onItemClickListener?.invoke(current)
         }
 
@@ -55,12 +54,6 @@ class PostListAdapter : ListAdapter<PostItem, PostListAdapter.PostViewHolder>(PO
 
     class PostViewHolder(binding: RecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root) {
         val postItemView = binding.textView
-
-        init {
-            postItemView.setOnClickListener {
-                Log.d("PostListAdapter","onItemClickListener")
-            }
-        }
 
         fun bind(text: String?) {
             postItemView.text = text

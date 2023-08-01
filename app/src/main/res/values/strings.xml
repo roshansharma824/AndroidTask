@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="accessibility_service_label">my accessibility service</string>
+    <string name="permission">permission</string>
+    <string name="ea_molestias_quasi_exercitationem_repellat_qui_ipsa_sit_aut">ea molestias quasi exercitationem repellat qui ipsa sit aut</string>
+    <string name="et_iusto_sed_quo_iure_nvoluptatem_occaecati_omnis_eligendi_aut_ad_nvoluptatem_doloribus_vel_accusantium_quis_pariatur_nmolestiae_porro_eius_odio_et_labore_et_velit_aut">et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut</string>
 </resources>
